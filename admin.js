@@ -1,11 +1,12 @@
-const {kafka} = require('./client')
+const { kafka } = require("./client");
 
 async function init() {
   const admin = kafka.admin();
-  console.log("Admin Connecting...");
+  console.log("Admin connecting...");
   admin.connect();
-  console.log(`Admin connected!`);
-  console.log(`Creating Topic: rider-updates`)
+  console.log("Adming Connection Success...");
+
+  console.log("Creating Topic [rider-updates]");
   await admin.createTopics({
     topics: [
       {
@@ -14,8 +15,9 @@ async function init() {
       },
     ],
   });
-  console.log(`Topic created!`)
-  console.log(`Disconnecting Admin`)
+  console.log("Topic Created Success [rider-updates]");
+
+  console.log("Disconnecting Admin..");
   await admin.disconnect();
 }
 
