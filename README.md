@@ -63,6 +63,7 @@ sudo docker run -d --name kafka \
   -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT \
   -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
   -e KAFKA_BROKER_ID=1 \
+  -e KAFKA_DELETE_TOPIC_ENABLE=true \
   confluentinc/cp-kafka
 ```
 this command will return the current docker container id 
